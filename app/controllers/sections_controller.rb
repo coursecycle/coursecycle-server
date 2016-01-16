@@ -10,7 +10,7 @@ class SectionsController < ApplicationController
 
   # GET /sections/1
   def show
-    render json: @section
+    render json: @section.to_json(:include => [:instructors])
   end
 
   # POST /sections

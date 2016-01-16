@@ -105,7 +105,6 @@ class CoursesController < ApplicationController
         else
 
           # Get the start and end dates/times
-
           date_format = "%b %e, %Y"
           start_date = Date.strptime(section_doc.at_css("schedules schedule startDate").content, date_format)
           end_date = Date.strptime(section_doc.at_css("schedules schedule endDate").content, date_format)
@@ -125,6 +124,37 @@ class CoursesController < ApplicationController
             end: end_time
           })
         end
+
+        # Try to find each of the instructors
+        section_doc.css("instructors instructor").each do |instructor_doc|
+          sunet = instructor_doc.at_css("sunet").content
+
+          if Instructor.exists?(sunet: sunet)
+            instructor = Instructor.find_by_sunet(sunet)
+          else
+            first_name = instructor_doc.at_css("firstName").content
+            last_name = instructor_doc.at_css("lastName").content
+            middle_name = instructor_doc.at_css("middleName").content
+            name = instructor_doc.at_css("name").content
+            role = instructor_doc.at_css("role").content
+
+            instructor = Instructor.create({
+              sunet: sunet,
+              first_name: first_name,
+              last_name: last_name,
+              middle_name: middle_name,
+              role: role,
+              name: name
+            })
+          end
+
+          # Ensure that instructor is associated with section
+          unless section.instructor_ids.include?(instructor.id)
+            section.instructors << instructor
+          end
+        end
       end
+      return course
     end
+
 end
