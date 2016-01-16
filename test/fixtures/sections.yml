@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  course_id: 
+  term_id: 
+  start: 2016-01-16 13:18:39
+  end: 2016-01-16 13:18:39
+  location: MyString
+
+two:
+  course_id: 
+  term_id: 
+  start: 2016-01-16 13:18:39
+  end: 2016-01-16 13:18:39
+  location: MyString
