@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get '/terms', to: 'terms#index'
   get '/terms/:id', to: 'terms#show'
 
+  root to: "application#index"
+
   # post '/courses/import', to: 'courses#import'
 
   # Serve websocket cable requests in-process
