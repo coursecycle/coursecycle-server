@@ -14,29 +14,29 @@ class SectionsController < ApplicationController
   end
 
   # POST /sections
-  def create
-    @section = Section.new(section_params)
-
-    if @section.save
-      render json: @section, status: :created, location: @section
-    else
-      render json: @section.errors, status: :unprocessable_entity
-    end
-  end
+  # def create
+  #   @section = Section.new(section_params)
+  #
+  #   if @section.save
+  #     render json: @section, status: :created, location: @section
+  #   else
+  #     render json: @section.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # PATCH/PUT /sections/1
-  def update
-    if @section.update(section_params)
-      render json: @section
-    else
-      render json: @section.errors, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   if @section.update(section_params)
+  #     render json: @section
+  #   else
+  #     render json: @section.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # DELETE /sections/1
-  def destroy
-    @section.destroy
-  end
+  # def destroy
+  #   @section.destroy
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -14,29 +14,29 @@ class TermsController < ApplicationController
   end
 
   # POST /terms
-  def create
-    @term = Term.new(term_params)
-
-    if @term.save
-      render json: @term, status: :created, location: @term
-    else
-      render json: @term.errors, status: :unprocessable_entity
-    end
-  end
+  # def create
+  #   @term = Term.new(term_params)
+  #
+  #   if @term.save
+  #     render json: @term, status: :created, location: @term
+  #   else
+  #     render json: @term.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # PATCH/PUT /terms/1
-  def update
-    if @term.update(term_params)
-      render json: @term
-    else
-      render json: @term.errors, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   if @term.update(term_params)
+  #     render json: @term
+  #   else
+  #     render json: @term.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # DELETE /terms/1
-  def destroy
-    @term.destroy
-  end
+  # def destroy
+  #   @term.destroy
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

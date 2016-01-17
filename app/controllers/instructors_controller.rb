@@ -14,29 +14,29 @@ class InstructorsController < ApplicationController
   end
 
   # POST /instructors
-  def create
-    @instructor = Instructor.new(instructor_params)
-
-    if @instructor.save
-      render json: @instructor, status: :created, location: @instructor
-    else
-      render json: @instructor.errors, status: :unprocessable_entity
-    end
-  end
+  # def create
+  #   @instructor = Instructor.new(instructor_params)
+  #
+  #   if @instructor.save
+  #     render json: @instructor, status: :created, location: @instructor
+  #   else
+  #     render json: @instructor.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # PATCH/PUT /instructors/1
-  def update
-    if @instructor.update(instructor_params)
-      render json: @instructor
-    else
-      render json: @instructor.errors, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   if @instructor.update(instructor_params)
+  #     render json: @instructor
+  #   else
+  #     render json: @instructor.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # DELETE /instructors/1
-  def destroy
-    @instructor.destroy
-  end
+  # def destroy
+  #   @instructor.destroy
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
