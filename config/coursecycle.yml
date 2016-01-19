@@ -1,0 +1,4 @@
+production:
+  origins: 'https://beta.coursecycle.com'
+development:
+  origins: 'http://localhost:8080'
