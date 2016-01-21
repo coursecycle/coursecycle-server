@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # resources :terms
 
   get '/courses', to: 'courses#index'
+  get '/courses/search', to: 'courses#search'
   get '/courses/:id', to: 'courses#show'
 
   get '/instructors', to: 'instructors#index'
@@ -16,6 +17,8 @@ Rails.application.routes.draw do
 
   get '/terms', to: 'terms#index'
   get '/terms/:id', to: 'terms#show'
+
+  get '/search', to: 'application#search'
 
   root to: "application#index"
 

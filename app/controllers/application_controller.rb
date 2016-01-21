@@ -17,4 +17,9 @@ class ApplicationController < ActionController::API
     }
   end
 
+  def search
+    q = params[:q].downcase.scan(/(\d+\D{0,3}|\D+)/)
+    render json: Course.search_course(q).limit(10)
+  end
+
 end

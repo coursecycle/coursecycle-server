@@ -121,6 +121,10 @@ GEM
     nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
     pg (0.18.1)
+    pg_search (0.7.9)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
+      arel
     puma (2.15.3)
     rack (2.0.0.alpha)
       json
@@ -189,6 +193,7 @@ DEPENDENCIES
   capistrano3-puma
   highline
   pg
+  pg_search
   puma
   rack-cors
   rails (>= 5.0.0.beta1, < 5.1)
